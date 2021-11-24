@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家逵後臺管理</title>
+</head>
+<body>
+    <div class="d-flex">
+        <aside class="sidebar vh-100 border-end d-flex bg-white flex-column pt-3">
+            <!-- 後臺名稱 -->
+            <div class="px-4">
+                <strong>XXX西餐廳</strong>
+                -後台管理
+            </div>
+            <!-- 選單 -->
+            <div class="overflow-auto mt-3 ">
+                <div>
+                    <a href="#" class="sidebar-link">
+                        <div class="px-4">
+                            首頁
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse">
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="mb-0">
+                                訂單管理
+                            </p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+                            </svg>
+                        </div>
+                    </a>
+                     <div class="collapse" id="menu-order">
+                         <a href="#" class="sidebar-link">
+                             <div class="ps-5">
+                                 所有訂單
+                             </div>
+                         </a>
+                        <a href="#" class="sidebar-link">
+                            <div class="ps-5">
+                                副餐
+                            </div>
+                        </a>
+                     </div>
+                </div>
+            </div>
+            <!-- 登出按鈕 -->
+            <a href="#" class="mt-auto sidebar-link">
+                <div class="px-4 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                        <path fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                    </svg>
+                    登出
+                </div>
+            </a>
+        </aside>
+        <main class="main">
+            <div class="bg-white w-100 border-bottom sticky-top">
+                <a href="#"
+                    class="py-3 px-4 d-inline-block border-end"
+                    id="toggle-btn"   
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                </svg>
+                </a>
+            </div>
+            <div class="p-4 ">
+                <!-- 連結按鈕 -->
+                <ul class="nav nav-pills mb-4">
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill active" aria-current="page" href="#">所有訂單
+                            <span class="badge  rounded-pill bg-light text-dark">900</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill" href="#">待處理
+                            <span class="badge  rounded-pill bg-light text-dark">600</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill">Disabled</a>
+                    </li>
+                </ul>
+                <!-- 主要內容 -->
+                <div class="row g-4 row-cols-lg-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-end">
+                                <h2 class="display-6">
+                                    在線人數
+                                </h2>
+                                <p class="display-4 mb-0">
+                                    3,111
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-end">
+                                <h2 class="display-6">
+                                    訂單數
+                                </h2>
+                                <p class="display-4 mb-0">
+                                    1,092
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-end">
+                                <h2 class="display-6">
+                                    營業額
+                                </h2>
+                                <p class="text-teal-500 text-bold">NT$</p>
+                                <p class="display-4 mb-0 text-teal-500">
+                                    3,111,123
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body h-100">
+                                <canvas id="pie-chart" class="img-fluid" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card ">
+                            <div class="card-body h-100">
+                                <canvas id="bar-chart" class="img-fluid"></canvas>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-transparent">
+                        <div class="input-group">
+                            <!-- 下拉選單 -->
+                            <div class="dropdown">
+                                <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button" id="abc" data-bs-toggle="dropdown"
+                                    aria-expanded="true">
+                                    操作
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="abc">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+
+                            <span class="input-group-text border-0 bg-transparent">
+                                <svg class="pe-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </span>
+                            <input type="search" class=" form-control border-0 shadow-none">
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="bg-light">
+                                    <tr class="align-middle">
+                                        <th scope="col" class="ps-4"></th>
+                                        <th scope="col" class="py-3">訂單編號</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">用戶姓名</th>
+                                        <th scope="col">購買品項</th>
+                                        <th scope="col">付款狀態</th>
+                                        <th scope="col">購買金額</th>
+                                        <th scope="col" class="pe-4">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-nowrap">
+                                    <tr class="align-middle">
+                                        <!-- <td class="ps-4"><input class="form-check-input" type="checkbox"></td> -->
+                                        <td scope="row" class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row" >P1234565</td>
+                                        <td >ab1234@email.com</td>
+                                        <td >陳小美</td>
+                                        <td>大麥克全家餐</td>
+                                        <td class="text-muted">
+                                            <div class="text-muted">尚未付款</div>
+                                        </td>
+                                        <td class="text-end">900</td>
+                                        <td class="text-end pe-4">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark ">
+                                                    編輯
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                                    </svg>
+                                                    
+                                                </a>
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li>
+                                                        <a 
+                                                            class="dropdown-item" 
+                                                            href="#"
+                                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                            data-bs-order-id="P1234565"
+                                                        >
+                                                        刪除訂單</a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <!-- <td class="ps-4"><input class="form-check-input" type="checkbox"></td> -->
+                                        <td scope="row" class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row">P1234566</td>
+                                        <td>bbb1234@email.com</td>
+                                        <td>陳小名</td>
+                                        <td>漢堡王全家餐</td>
+                                        <td class="text-muted">
+                                            <div class="text-muted">尚未付款</div>
+                                        </td>
+                                        <td class="text-end">500</td>
+                                        <td class="text-end pe-4">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark ">
+                                                    編輯
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                                    </svg>
+                                    
+                                                </a>
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li>
+                                                        <a 
+                                                            class="dropdown-item" 
+                                                            href="#"
+                                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                            data-bs-order-id="P1234566"
+                                                        >
+                                                        刪除訂單</a></li>
+                                    
+                                                </ul>
+                                            </div>
+                                    
+                                        </td>
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <!-- <td class="ps-4"><input class="form-check-input" type="checkbox"></td> -->
+                                        <td scope="row" class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row">P1234567</td>
+                                        <td>ccc1234@email.com</td>
+                                        <td>陳小美</td>
+                                        <td>大麥克全家餐</td>
+                                        <td class="text-muted">
+                                            <div class="text-muted">尚未付款</div>
+                                        </td>
+                                        <td class="text-end">600</td>
+                                        <td class="text-end pe-4">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark ">
+                                                    編輯
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                                    </svg>
+                                    
+                                                </a>
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li>
+                                                        <a 
+                                                            class="dropdown-item" 
+                                                            href="#"
+                                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                            data-bs-order-id="P1234567"
+                                                        >
+                                                        刪除訂單</a></li>
+                                    
+                                                </ul>
+                                            </div>
+                                    
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 頁碼標籤 -->
+                        <div class="card-footer bg-transparent">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-end mb-0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div 
+                            class="modal fade" 
+                            id="deleteModal" 
+                            tabindex="-1" 
+                            aria-labelledby="exampleModalLabel" 
+                            aria-hidden="false"
+                        >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 
+                                            class="modal-title" 
+                                            id="exampleModalLabel"
+                                        >
+                                        刪除訂單
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>確認刪除 「<span id="deleteText"></span>」的訂單嗎?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger">確認刪除</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 單一頁面 -->
+                <div data-bs-spy="scroll" data-bs-target="#detail-list-item" data-bs-offset="80">
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="col-lg-3 mb-3">
+                                <nav id="detail-list-item" class="list-group sticky-top">
+                                    <a href="#card-summary" class="list-group-item list-group-item-action active" aria-current="true">
+                                        摘要
+                                    </a>
+                                    
+                                    <a href="#card-invoie" class="list-group-item list-group-item-action">發票管理</a>
+                                    
+                                    
+                                </nav>
+                            </div>
+                            <div class="col-lg-9">
+                                <!-- 訂單摘要 -->
+                                <div class="card mb-3">
+                                    <div class="card-header" id="card-summary">
+                                        摘要
+                                    </div>
+                                    <div class="card-body">
+                                        <dl class="row mb-0">
+                                            <dt class="col-sm-3 text-truncate">訂單編號</dt>
+                                            <dd class="col-sm-9">P1234567</dd>
+                                            <dt class="col-sm-3 text-truncate">訂單金額</dt>
+                                            <dd class="col-sm-9">700</dd>
+                                            <dt class="col-sm-3 text-truncate">訂單狀態</dt>
+                                            <dd class="col-sm-9">待處理</dd>
+                                            <dt class="col-sm-3 text-truncate">發票狀態</dt>
+                                            <dd class="col-sm-9">未開立</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!-- 發票管理 -->
+                                <div class="card mb-3">
+                                    <div class="card-header" id="card-invoie">
+                                        發票管理
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row mb-3">
+                                            <label for="invoiceType" class="col-sm-2 col-form-label">
+                                                發票類型
+                                            </label>
+                                            <div class="col-sm-10 ">
+                                                <select name="" id="invoiceType" class="form-select">
+                                                    <option value="">個人發票</option>
+                                                    <option value="" selected>營業人三聯式發票</option>
+                                                    <option value="">捐贈發票</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="taxNumber" class="col-sm-2 col-form-label">
+                                                統一編號
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" id="taxNumber" class="form-control" value="25498845">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="companyName" class="col-sm-2 col-form-label">
+                                                公司名稱
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" id="companyName" class="form-control" value="123有限公司">
+                                            </div>
+                                        </div>
+                                        <div class="text-end">
+                                            <button type="button" class="btn btn-outline-primary">更新資訊</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <script>
+            const modalByDelete = document.querySelector("#deleteModal");
+                modalByDelete.addEventListener('show.bs.modal', function (event) {
+                    const button = event.relatedTarget;
+                    console.log("button", button);
+                    const orderId = button.dataset.bsOrderId;
+                    console.log("orderId",orderId);
+                    const modalText = modalByDelete.querySelector("#deleteText");
+                    modalText.textContent = orderId;
+                })
+        </script>
+    </div>
+    <!-- //圖表 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        (() => {
+            const chartColors = {
+                red: 'rgb(255, 99, 132)',
+                orange: 'rgb(255, 159, 64)',
+                yellow: 'rgb(255, 205, 86)',
+                green: 'rgb(75, 192, 192)',
+                blue: 'rgb(54, 162, 235)',
+                purple: 'rgb(153, 102, 255)',
+                grey: 'rgb(201, 203, 207)'
+            };
+            var randomScalingFactor = function () {
+                return Math.round(Math.random() * 2000000);
+            };
+
+            const pieCtx = document.getElementById('pie-chart').getContext('2d');
+            const barCtx = document.getElementById('bar-chart').getContext('2d');
+
+            const config = {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                        ],
+                        backgroundColor: [
+                            chartColors.red,
+                            chartColors.orange,
+                            chartColors.yellow,
+                            chartColors.green,
+                            chartColors.blue,
+                        ],
+                        label: 'Dataset 1'
+                    }],
+                    labels: [
+                        '大麥克全餐',
+                        '肥宅快樂水',
+                        '太爽啦義大利麵',
+                        '薯條加大吃不完',
+                        '兒童餐椅不給坐',
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            };
+            const barConfig = {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                        ],
+                        backgroundColor: [
+                            chartColors.red,
+                            chartColors.orange,
+                            chartColors.yellow,
+                            chartColors.green,
+                            chartColors.blue,
+                            chartColors.purple,
+                        ],
+                        label: 'Dataset 1'
+                    }],
+                    labels: [
+                        '一月',
+                        '二月',
+                        '三月',
+                        '四月',
+                        '五月',
+                        '六月',
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            };
+            const pieChart = new Chart(pieCtx, config);
+            const barChart = new Chart(barCtx, barConfig);
+        })();
+    </script>
+</body>
+</html>

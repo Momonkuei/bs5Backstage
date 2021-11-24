@@ -1,0 +1,54 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+
+$primary:#aa00b6;
+$secondary:#71ddff;
+$success:#00ff89;
+
+$enable-negative-margins:true;
+
+$form-feedback-invalid-color: #ff9a00;
+
+
+@import "../node_modules/bootstrap/scss/variables";
+
+$position-values:map-merge($position-values,
+    (
+        auto:auto,
+    )
+);
+
+$border-radius-lg:.75rem;
+
+$card-border-radius:$border-radius-lg;
+
+$list-group-border-radious:$border-radius-lg;
+
+$utilities-text-colors:map-merge($utilities-text-colors, 
+    (
+    "teal-500": $teal-500,
+    )
+);
+@import "../node_modules/bootstrap/scss/utilities";
+
+// $utilities:map-merge(
+//     $utilities,
+//     (
+//         "width":
+//             map-merge(
+//                 map-get($utilities, "width"),
+//                 (
+//                     responsive:true,
+//                     values:
+//                         map-merge(
+//                             map-get(map-get($utilities,"width"),"values"),
+//                             (
+//                                 "280px":280px,
+//                             )
+//                         )
+//                 )
+//             )
+//     )
+// );
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

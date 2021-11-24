@@ -1,0 +1,76 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+$primary:#aa00b6;
+$secondary:#71ddff;
+$success:#00ff89;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$sidebar-width:280px;
+
+//行動版(預設)
+.sidebar{
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
+    transition: margin-left .25s;
+    position: fixed;
+    top:0;
+}
+
+.main{
+    margin-left: $sidebar-width;
+}
+//展開sideebar
+.sidebar-toggled{
+    .sidebar{
+        margin-left: 0;
+    }
+}
+
+.sidebar-link{
+    color:$dark;
+    display: block;
+    text-decoration: none;
+    padding-top: 0.875rem;
+    //14px
+    padding-bottom: 0.875rem;
+    &:hover{
+        background-color: rgba($primary, $alpha: 0.16);
+    }
+}
+.sidebar-link.active {
+    position: relative;
+    color: $primary !important;
+    background-color: rgba($primary, $alpha: 0.16);
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 2px;
+        width: 3px;
+        background: $primary;
+    }
+}
+//桌面板(up)
+@include media-breakpoint-up(lg){
+    .sidebar {
+        margin-left: 0;
+        width: $sidebar-width;
+    }
+    .main {
+        width: calc(100vw - #{$sidebar-width});
+        margin-left: $sidebar-width;
+        transition: margin-left 0.25s;
+    }
+
+    // 展開
+    .sidebar-toggled {
+        .sidebar {
+            margin-left: -$sidebar-width;
+        }
+        .main{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
